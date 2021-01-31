@@ -35,7 +35,7 @@
         <ButtonLight buttonText="Incele" />
       </div>
       <div class="flex-1 items-center">
-        <router-link to="/form"
+        <router-link :to="{ name: 'Form', params: { id: company.id } }"
           ><Button buttonText="Ucretsiz Teklif Al"
         /></router-link>
       </div>
@@ -52,18 +52,15 @@ export default {
   data() {
     return {
       value: this.company.score,
-      MedalSvg
+      MedalSvg,
     };
   },
   props: ["company"],
   methods: {},
   components: {
     Button,
-    ButtonLight
+    ButtonLight,
   },
-  created() {
-    console.log("company", this.company);
-  }
 };
 </script>
 

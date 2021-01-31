@@ -10,7 +10,6 @@ const getters = {
 
 const actions = {
   async fetchCompanies({ commit }) {
-    console.log(process.env);
     const response = await axios.get(`${process.env.VUE_APP_API}/companies`);
 
     commit("setCompanies", response.data);
