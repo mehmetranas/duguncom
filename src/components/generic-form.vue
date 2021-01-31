@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <div v-for="field in fields" :key="field.id" class="flex flex-col">
-      <label class="leading-loose">{{ field.fieldLabel }}</label>
+  <div class="gap-1 flex flex-col">
+    <div v-for="field in fields" :key="field.id" class="flex flex-col my-1">
+      <label class="leading-loose text-left text-sm">{{
+        field.fieldLabel
+      }}</label>
       <component
         :is="`app-${field.fieldType}`"
         :field="field"

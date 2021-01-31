@@ -1,9 +1,14 @@
 <template>
-  <input
-    type="text"
-    v-model="data.value"
-    class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-  />
+  <div class="relative focus-within:text-gray-600 text-gray-400">
+    <input
+      type="text"
+      v-model="data.value"
+      class="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+    />
+    <div class="absolute right-3 top-2">
+      <img :src="require(`/src/assets/images/form-${field.fieldName}.svg`)" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -13,10 +18,8 @@ export default {
     field: { required: true },
     data: {
       required: true,
+      default: () => ({ value: "" }),
     },
-  },
-  created() {
-    console.log(this.data);
   },
 };
 </script>
