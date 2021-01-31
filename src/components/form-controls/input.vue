@@ -2,6 +2,7 @@
   <div class="relative focus-within:text-gray-600 text-gray-400">
     <input
       type="text"
+      required
       v-model="data[field.fieldName]"
       class="block w-full capitalize py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
     />
@@ -19,6 +20,7 @@ export default {
     data: {
       required: true,
     },
+    errors: { required: false },
   },
 };
 </script>

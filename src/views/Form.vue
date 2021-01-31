@@ -45,14 +45,14 @@ export default {
   data() {
     return {
       companyId: this.$route.params.id,
-      formData: {},
+      formData: { values: {}, errors: {} },
     };
   },
   methods: {
     ...mapActions(["fetchSchemas", "addForm"]),
     onSubmit(event) {
       event.preventDefault();
-      this.addForm(this.formData);
+      this.addForm(this.formData.values);
       this.$router.push({ name: "SuccessMessage" });
     },
   },

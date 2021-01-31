@@ -2,7 +2,7 @@
   <div class="bg-gray-100 flex flex-col justify-center sm:py-12 h-screen">
     <div class="relative sm:max-w-xl sm:mx-auto w-full h-full">
       <div
-        class="bg-white md:mx-0 pb-10 pt-2 px-6 md:px-0 relative shadow h-full"
+        class="bg-white md:mx-0 pb-10 pt-2 px-6 md:px-0 relative shadow h-full flex flex-col"
       >
         <div class="flex items-center -mx-6 md:mx-0 border-b space-x-5">
           <div
@@ -45,9 +45,7 @@
             </p>
           </div>
         </div>
-        <div
-          class="pt-4 flex items-center space-x-4 justify-center mx-auto max-w-md"
-        >
+        <div class="max-w-md mx-0 md:mx-10 py-2 mt-auto">
           <div class="items-center w-full">
             <router-link :to="{ name: 'Home' }"
               ><Button buttonText="Tamam"
