@@ -1,9 +1,13 @@
 <template>
   <div class="bg-white shadow-xl rounded-lg overflow-hidden">
     <div
-      class="bg-cover bg-center h-56 p-4"
+      class="bg-cover bg-center h-56 p-4 flex"
       v-bind:style="{ backgroundImage: 'url(' + company.imageUrl + ')' }"
-    ></div>
+    >
+      <div class="flex justify-end mt-auto">
+        <p class="m-0 text-white">{{ company.district.name }}</p>
+      </div>
+    </div>
     <div class="p-2">
       <p class="capitalize tracking-wide text-xs text-gray-400 text-left">
         {{
@@ -48,18 +52,18 @@ export default {
   data() {
     return {
       value: this.company.score,
-      MedalSvg,
+      MedalSvg
     };
   },
   props: ["company"],
   methods: {},
   components: {
     Button,
-    ButtonLight,
+    ButtonLight
   },
   created() {
     console.log("company", this.company);
-  },
+  }
 };
 </script>
 

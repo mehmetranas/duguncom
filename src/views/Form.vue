@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <form>
     <p>This is form</p>
-  </div>
+  </form>
 </template>
 
 <script>
