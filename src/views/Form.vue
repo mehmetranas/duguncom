@@ -15,6 +15,7 @@
           <div class="max-w-md mx-auto">
             <div class="divide-y divide-gray-200">
               <div
+                v-if="getFormOnSchema.length > 0"
                 class="text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7"
               >
                 <GenericForm :fields="allSchemas" :data="formData" />
@@ -44,30 +45,18 @@ export default {
   data() {
     return {
       companyId: this.$route.params.id,
-      formData: {
-        ad_soyad_58: { value: "" },
-        e_mail_60: { value: "" },
-        telefon_61: { value: "" },
-        dugun_tarihi_1: { value: "" },
-        kisi_basi_butceniz_2: { value: "1" },
-        tahmini_davetli_sayisi_4: { value: "34" },
-        mesajiniz_5: { value: "" },
-      },
+      formData: {},
     };
   },
   methods: {
     ...mapActions(["fetchSchemas", "addForm"]),
     onSubmit(event) {
       event.preventDefault();
-      // let formBody = {};
-      // for (const [key, el] of Object.entries(this.formData)) {
-      //   formBody[key] = el.value;
-      // }
-      // this.addForm(formBody);
+      this.addForm(this.formData);
       this.$router.push({ name: "SuccessMessage" });
     },
   },
-  computed: mapGetters(["allSchemas"]),
+  computed: mapGetters(["allSchemas", "getFormOnSchema"]),
   created() {
     this.fetchSchemas(this.companyId);
   },

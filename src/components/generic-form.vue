@@ -7,7 +7,7 @@
       <component
         :is="`app-${field.fieldType}`"
         :field="field"
-        :data.sync="data[field.fieldName]"
+        :data.sync="data"
       ></component>
     </div>
   </div>

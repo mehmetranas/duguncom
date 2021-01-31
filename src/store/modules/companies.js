@@ -6,6 +6,7 @@ const state = {
 
 const getters = {
   allCompanies: (state) => state.Companies,
+  getCompany: (state) => (id) => state.Companies.find((c) => c.id == id),
 };
 
 const actions = {
