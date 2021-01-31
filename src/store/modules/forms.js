@@ -2,10 +2,12 @@ import axios from "axios";
 
 const state = {
   FormsSchema: [],
+  Forms: [],
 };
 
 const getters = {
   allSchemas: (state) => state.FormsSchema,
+  allForms: (state) => state.Forms,
 };
 
 const actions = {
@@ -16,10 +18,18 @@ const actions = {
 
     commit("setAllSchemas", response.data);
   },
+
+  async addForm({ commit }, form) {
+    // Actually we post to serve
+    //...
+
+    commit("setAddForm", form);
+  },
 };
 
 const mutations = {
   setAllSchemas: (state, FormsSchema) => (state.FormsSchema = FormsSchema),
+  setAddForm: (state, form) => state.Forms.push(form),
 };
 
 export default {
